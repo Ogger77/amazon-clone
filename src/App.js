@@ -15,7 +15,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
 const promise = loadStripe(
-  "pk_test_51HYEMZGH8KVOrYWm7YRmggJfk1zRsVxpOc8kDn04i1Cy5R7uoQAmYBR9uRv0pYvotAhXaapHiBJKSErW7BkzvpA7001ynYazU0"
+  "sk_test_51HYEMZGH8KVOrYWmvChiHW6RedJ7y1Aqcvl1yso0FED4A1QMr901t7Rrm7IMRa4RAEg9y51frW11fjvPXIQVXYOs00oZUyFGOF"
 );
 
 function App() {
@@ -62,6 +62,8 @@ function App() {
           </Route>
 
           <Route path="/orders">
+            <Header />
+
             <Orders />
           </Route>
 

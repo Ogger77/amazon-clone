@@ -4,7 +4,7 @@ import StarRateIcon from "@material-ui/icons/StarRate";
 import { yellow } from "@material-ui/core/colors";
 import { useStateValue } from "../state/StateProvider";
 
-function CheckoutProduct({ id, image, title, price, rating }) {
+function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
   const [{ basket }, dispatch] = useStateValue();
 
   const removeFromBasket = () => {
@@ -30,7 +30,10 @@ function CheckoutProduct({ id, image, title, price, rating }) {
               <StarRateIcon style={{ color: yellow[500] }} />
             ))}
         </div>
-        <button onClick={removeFromBasket}>Remove from basket</button>
+        {/* hide the remove basket button from related page */}
+        {!hideButton && (
+          <button onClick={removeFromBasket}>Remove from basket</button>
+        )}
       </div>
     </div>
   );
